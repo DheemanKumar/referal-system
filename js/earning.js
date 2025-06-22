@@ -5,16 +5,27 @@ const API_BASE = 'https://lead-manager-production.up.railway.app';
 
 document.addEventListener('DOMContentLoaded', function() {
   // Navigation
-  document.getElementById('btn-dashboard').addEventListener('click', function() {
+  const btnDashboard = document.getElementById('btn-dashboard');
+  if (btnDashboard) btnDashboard.addEventListener('click', function() {
     window.location.href = 'dashbord.html';
   });
-  document.getElementById('btn-refer').addEventListener('click', function() {
+  const btnRefer = document.getElementById('btn-refer');
+  if (btnRefer) btnRefer.addEventListener('click', function() {
     window.location.href = 'refer.index.html';
   });
-  document.getElementById('btn-earning').addEventListener('click', function() {
+  const btnEarning = document.getElementById('btn-earning');
+  if (btnEarning) btnEarning.addEventListener('click', function() {
     window.location.href = 'earning.html';
   });
-  document.getElementById('btn-logout').addEventListener('click', function() {
+  const btnLogout = document.getElementById('btn-logout');
+  if (btnLogout) btnLogout.addEventListener('click', async function() {
+    const token = localStorage.getItem('token');
+    try {
+      await fetch(API_BASE + '/api/auth/logout', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+    } catch (err) {}
     localStorage.removeItem('token');
     window.location.href = 'index.html';
   });
@@ -28,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       if (!res.ok) return;
       const data = await res.json();
-    //   console.log(data);
+      console.log(data);
       // Set earning summary
       document.getElementById('total-earning').textContent = '₹' + (data.totalEarning || 0);
       document.getElementById('bonus').textContent = '₹' + (data.bonus || 0);
@@ -40,26 +51,41 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       // Render earning breakdown
       const list = document.getElementById('earning-list');
-      list.innerHTML = '';
-      if (!data.leads || data.leads.length === 0) {
-        list.innerHTML = '<div class="text-center py-4 text-muted">No earning breakdown available</div>';
-      } else {
-        data.leads.forEach(lead => {
-          const card = document.createElement('div');
-          card.className = 'card mb-3';
-          card.innerHTML = `
-            <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-              <div>
-                <h5 class="mb-1">${lead.name}</h5>
-                <div class="text-muted small">${lead.status}</div>
-              </div>
-              <div class="d-flex align-items-center gap-2 mt-3 mt-md-0">
-                <span class="badge bg-success">₹${lead.earning}</span>
-              </div>
-            </div>
-          `;
-          list.appendChild(card);
-        });
+list.innerHTML = '';
+
+if (!data.leads || data.leads.length === 0) {
+  list.innerHTML = `
+    <div class="text-center py-5 text-muted bg-white shadow-sm rounded-4">
+      <i class="bi bi-graph-up-arrow fs-1 mb-3 text-secondary"></i>
+      <div class="fw-semibold">No earning breakdown available</div>
+    </div>
+  `;
+} else {
+  data.leads.forEach(lead => {
+    const card = document.createElement('div');
+    card.className = 'card mb-3 shadow-sm border-0 rounded-4';
+
+    let badgeClass = 'bg-success-subtle text-success-emphasis';
+    let earningText = `₹${lead.earning}`;
+    if (lead.copy === true || lead.eligibility === false) {
+      badgeClass = 'bg-secondary-subtle text-secondary-emphasis';
+      earningText = 'Ineligible';
+    }
+
+    card.innerHTML = `
+      <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+        <div>
+          <h6 class="mb-1 fw-semibold text-dark">${lead.name}</h6>
+          <div class="text-muted small text-capitalize">${lead.status}</div>
+        </div>
+        <div class="mt-3 mt-md-0">
+          <span class="badge ${badgeClass} px-3 py-2 rounded-pill">${earningText}</span>
+        </div>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
       }
     } catch (err) {
       // Optionally handle error

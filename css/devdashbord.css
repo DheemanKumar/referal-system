@@ -1,0 +1,160 @@
+/* ---------------------------------
+   🧱 Global Elements
+---------------------------------- */
+body {
+  background-color: #f4f6f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ---------------------------------
+   📦 Card Styling
+---------------------------------- */
+.card {
+  border: none;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08) !important;
+}
+
+.card h4,
+.card h5 {
+  font-weight: 600;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ---------------------------------
+   🖊️ Typography & Utility Text
+---------------------------------- */
+.text-muted {
+  color: #6c757d !important;
+}
+
+.badge {
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+#is-admin {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ---------------------------------
+   🖱️ Button Styles
+---------------------------------- */
+.btn {
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+
+/* ⛳ Gradient Blue Button */
+.btn-gradient-blue {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color: white !important;
+  border: none;
+  box-shadow: 0 4px 10px rgba(78, 84, 200, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-blue:hover {
+  background: linear-gradient(90deg, #3c41a0, #6f75d9);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(78, 84, 200, 0.3);
+}
+
+.btn-gradient-blue:active {
+  transform: scale(0.97);
+}
+
+/* ⚙️ Gray Gradient Button */
+.btn-gradient-gray {
+  background: linear-gradient(90deg, #adb5bd, #ced4da);
+  color: #333;
+  border: none;
+  box-shadow: 0 4px 8px rgba(173, 181, 189, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-gray:hover {
+  background: linear-gradient(90deg, #9ca4ab, #bfc6cd);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(173, 181, 189, 0.3);
+}
+
+.btn-gradient-gray:active {
+  transform: scale(0.97);
+}
+
+/* 🔳 Outline Buttons */
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* ---------------------------------
+   🎨 Custom Backgrounds and Borders
+---------------------------------- */
+.bg-light-subtle {
+  background-color: #f8f9fa !important;
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+/* ---------------------------------
+   👤 Icon Styling
+---------------------------------- */
+.bi-person-circle,
+.bi-people,
+.bi-archive-fill,
+.bi-clock-history,
+.bi-shield-lock-fill {
+  opacity: 0.85;
+}
+
+/* ---------------------------------
+   📱 Responsive Adjustments
+---------------------------------- */
+@media (max-width: 768px) {
+  .card-header,
+  .card-body {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .d-flex.flex-wrap.gap-2 {
+    gap: 0.5rem !important;
+  }
+}
+
+/* ---------------------------------
+   🧩 Lead Status Dropdown Styling
+---------------------------------- */
+select.lead-status-dropdown {
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  transition: border 0.3s ease;
+}
+
+select.lead-status-dropdown:focus {
+  border-color: #4e54c8;
+  box-shadow: 0 0 0 2px rgba(78, 84, 200, 0.2);
+}
+
+select.form-select-sm {
+  font-size: 0.875rem;
+}

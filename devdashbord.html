@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Dev Dashboard</title>
@@ -9,69 +10,123 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/devdashbord.css">
+  <!-- <link rel="stylesheet" href="css/leaderboard.css"> -->
 </head>
+
 <body class="bg-light min-vh-100">
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded-bottom custom-navbar px-3 py-2 mb-4">
     <div class="container-fluid">
-      <span class="navbar-brand fs-4">website name</span>
-      <div class="d-flex align-items-center ms-3">
-        <button class="btn btn-light me-2 active" id="btn-dashboard">Dashboard</button>
-        <button class="btn btn-light me-2" id="btn-earning">Earning</button>
+      <!-- Brand -->
+      <span class="navbar-brand fw-bold fs-4 text-primary">Website Name</span>
+
+      <!-- Toggle for mobile -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links and Actions -->
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <!-- Left Buttons -->
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-outline-primary rounded-pill px-3 active" id="btn-dashboard">Dashboard</button>
+          <button class="btn btn-outline-primary rounded-pill px-3" id="btn-earning">Earning</button>
+        </div>
+
+        <!-- Right Logout -->
+        <div class="d-flex">
+          <button class="btn btn-danger rounded-pill px-4 ms-lg-3 mt-2 mt-lg-0" id="btn-logout">Logout</button>
+        </div>
       </div>
-      <button class="btn btn-danger ms-auto" id="btn-logout">Logout</button>
     </div>
   </nav>
+
+  <!-- Main Content -->
   <div class="container">
     <div class="row g-4">
-      <!-- User Info Panel -->
+      <!-- Admin Info Panel -->
       <div class="col-lg-8">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+        <!-- Admin Info Card -->
+        <div class="card shadow-lg rounded-4 mb-4 border-0 bg-light">
+          <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-md-center py-4 px-4">
+            <!-- Left: Name and Email -->
             <div>
-              <h4 class="mb-1" id="user-name">Admin Name</h4>
+              <h4 class="fw-bold mb-1 text-primary" id="user-name">Admin Name</h4>
               <div class="text-muted small" id="user-email">admin@email.com</div>
-              <div class="badge bg-primary mt-2" id="is-admin">Admin</div>
+            </div>
+
+            <!-- Right: Icon + Admin Badge -->
+            <div class="mt-3 mt-md-0 text-end">
+              <i class="bi bi-person-circle text-primary fs-1 d-block"></i>
+              <span class="badge text-white mt-2 px-3 py-2 rounded-pill d-inline-block" id="is-admin"
+                style="background: linear-gradient(to right, #4e54c8, #8f94fb); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <i class="bi bi-shield-lock-fill me-1"></i> Admin
+              </span>
             </div>
           </div>
         </div>
-        
-        <!-- Leads Table -->
-        <div class="card shadow-sm">
-          <div class="card-header bg-white border-0 pb-0 d-flex justify-content-between align-items-center">
-            <div>
-              <span class="fw-bold fs-5">Your Referrals</span>
-              <div class="text-muted small">Track the status of your submitted referrals</div>
+
+
+        <!-- Referrals Table Card -->
+        <div class="card shadow-lg rounded-4 border-0 bg-white">
+          <!-- Header -->
+          <div
+            class="card-header bg-white border-0 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center px-4 pt-4 pb-2">
+            <div class="mb-2 mb-md-0">
+              <h5 class="fw-bold mb-1 text-dark">Your Referrals</h5>
+              <p class="text-muted small mb-0">Track the status of your submitted referrals</p>
             </div>
-            <button class="btn btn-outline-primary btn-sm" id="download-all-resumes">
-              Download All Resumes (ZIP)
-            </button>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-sm btn-gradient-blue shadow-sm px-3" id="download-all-resumes">
+                <i class="bi bi-archive-fill me-1"></i> All Resumes (ZIP)
+              </button>
+              <button class="btn btn-sm btn-gradient-gray shadow-sm px-3" id="download-new-resumes">
+                <i class="bi bi-clock-history me-1"></i> New Only (ZIP)
+              </button>
+            </div>
           </div>
-          <div class="card-body">
+
+          <!-- Body -->
+          <div class="card-body px-4 pb-4">
             <div class="overflow-x-auto">
-              <div id="referrals-list">
-                <div class="text-center py-4 text-muted">No referrals yet.</div>
+              <div id="referrals-list" class="rounded-4">
+                <div
+                  class="text-center py-5 text-muted bg-light-subtle rounded-4 border border-dashed border-secondary-subtle">
+                  <i class="bi bi-people fs-1 mb-3 d-block text-secondary"></i>
+                  <div class="fw-semibold">No referrals yet. Start referring candidates!</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+
+
       </div>
-      <!-- Leaderboard - Right Side -->
-      <div class="col-lg-4">
-        <div class="card shadow-sm">
-          <div class="card-header d-flex align-items-center bg-white border-0 pb-0">
-            <span id="trophy-icon" class="me-2"></span>
-            <span class="fw-bold fs-5">Leaderboard</span>
+
+
+      <!-- Leaderboard Panel -->
+      <div class="col-lg-4 leaderboard-container">
+        <div class="card shadow-sm border-0 rounded-4 leaderboard-card">
+          <div class="card-header d-flex align-items-center bg-light border-0 rounded-top-4 py-3 px-4">
+            <i data-lucide="trophy" class="text-warning"
+              style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem;"></i>
+            <span class="fw-bold fs-5 text-dark">Leaderboard</span>
           </div>
-          <div class="card-body">
+          <div class="card-body px-4 pb-4">
             <div id="leaderboard-list">
-              <div class="text-center py-4 text-muted">No leaderboard data available</div>
+              <div class="text-center py-4 text-muted small">No leaderboard data available</div>
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
   </div>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Lucide Icons Render -->
@@ -84,13 +139,14 @@
     });
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const btnEarning = document.getElementById('btn-earning');
-      if (btnEarning) btnEarning.addEventListener('click', function() {
+      if (btnEarning) btnEarning.addEventListener('click', function () {
         window.location.href = 'devearning.html';
       });
     });
   </script>
   <script src="js/devdashbord.js"></script>
 </body>
+
 </html>

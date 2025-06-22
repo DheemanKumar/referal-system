@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMsg.style.display = 'block';
         }
     });
-    // Register
+    // Register (with OTP)
     registerForm.addEventListener('submit', async function (e) {
         e.preventDefault();
         const username = document.getElementById('reg-username').value;
@@ -45,31 +45,16 @@ document.addEventListener('DOMContentLoaded', function () {
         errorMsg.style.display = 'none';
         const body = { name: username, email, employee_id, password, is_admin: false };
         try {
-            const res = await fetch(API_BASE + '/api/auth/signup', {
+            const res = await fetch(API_BASE + '/api/auth/signup-otp', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body)
             });
             const data = await res.json();
-            if (res.ok && data.message) {
-                // After successful registration, auto-login
-                const loginRes = await fetch(API_BASE + '/api/auth/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
-                });
-                const loginData = await loginRes.json();
-                if (loginRes.ok && loginData.token) {
-                    localStorage.setItem('token', loginData.token);
-                    if (loginData.is_admin) {
-                        window.location.href = 'devdashbord.html';
-                    } else {
-                        window.location.href = 'dashbord.html';
-                    }
-                } else {
-                    errorMsg.textContent = loginData.error || 'Login failed after registration';
-                    errorMsg.style.display = 'block';
-                }
+            if (res.ok && data.message && data.token) {
+                // OTP sent, redirect to OTP page
+                localStorage.setItem('otp_email', email);
+                window.location.href = 'otp.html';
             } else {
                 errorMsg.textContent = data.error || 'Registration failed';
                 errorMsg.style.display = 'block';

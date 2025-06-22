@@ -1,0 +1,63 @@
+/* Enhanced background for main */
+main {
+  background-color: #f4f6f9;
+}
+
+/* Subtle Bootstrap-like badge colors */
+.bg-success-subtle {
+  background-color: #d1e7dd;
+}
+.text-success-emphasis {
+  color: #0f5132;
+}
+
+
+.bg-success-subtle {
+  background-color: #d1e7dd;
+}
+.text-success-emphasis {
+  color: #0f5132;
+}
+.bg-secondary-subtle {
+  background-color: #e2e3e5;
+}
+.text-secondary-emphasis {
+  color: #41464b;
+}
+
+/* Custom gradient buttons */
+.btn-gradient-blue {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color: white;
+  border: none;
+}
+.btn-gradient-blue:hover {
+  background: linear-gradient(90deg, #3b41a1, #7a82ea);
+  color: white;
+}
+
+.btn-gradient-gray {
+  background: linear-gradient(90deg, #6c757d, #adb5bd);
+  color: white;
+  border: none;
+}
+.btn-gradient-gray:hover {
+  background: linear-gradient(90deg, #5c636a, #9da4ab);
+  color: white;
+}
+
+/* Light subtle background */
+.bg-light-subtle {
+  background-color: #f8f9fa !important;
+}
+
+/* Dashed border enhancement */
+.border-dashed {
+  border-style: dashed !important;
+}
+
+/* Optional: Improve button focus */
+button:focus {
+  box-shadow: 0 0 0 0.15rem rgba(108, 117, 125, 0.4);
+}
+

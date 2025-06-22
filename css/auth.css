@@ -1,0 +1,55 @@
+/* Glass Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Auth Form Inputs */
+.form-control {
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Custom Gradient Buttons (already defined in your CSS) */
+.btn-gradient-blue {
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  color: white !important;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-blue:hover {
+  background: linear-gradient(to right, #3c41a0, #6f75d9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(78, 84, 200, 0.2);
+}
+
+.btn-gradient-gray {
+  background: linear-gradient(90deg, #adb5bd, #ced4da);
+  color: #333;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(173, 181, 189, 0.2);
+}
+
+.btn-gradient-gray:hover {
+  background: linear-gradient(90deg, #9ca4ab, #bfc6cd);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(173, 181, 189, 0.3);
+}

@@ -1,0 +1,116 @@
+/* Global Container Styling */
+#admin-earning-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Employee Card */
+.employee-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.employee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+}
+
+.employee-card h5 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #343a40;
+}
+
+.employee-card .subtitle {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.75rem;
+}
+
+.employee-card .info-line {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #495057;
+}
+
+.employee-card .info-line strong {
+  color: #212529;
+}
+
+.employee-card .badge {
+  font-size: 0.9rem;
+  padding: 0.4em 0.75em;
+  border-radius: 0.5rem;
+}
+
+.employee-card .view-btn {
+  margin-top: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  transition: background 0.2s;
+}
+
+.employee-card .view-btn:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+}
+
+
+body {
+  background: #f4f6f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.earnings-panel {
+  background: #ffffff;
+  border: 1px solid #e3e6ea;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.earnings-panel:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+#total-earned {
+  font-size: 1.1rem;
+  background-color: #198754 !important;
+}
+
+h3.fw-bold {
+  color: #0d6efd;
+  letter-spacing: 0.5px;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+
+.modal-content {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-body p {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}

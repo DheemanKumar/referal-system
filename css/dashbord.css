@@ -1,0 +1,57 @@
+/* Cards with clean borders and gentle rounding */
+.card {
+  border-radius: 1rem;
+  background: #ffffff;
+}
+
+/* User Info Card */
+.user-info-card {
+  background: linear-gradient(to right, #f0f8ff, #ffffff);
+}
+
+/* Stat Card Background (Optional) */
+.stats-card {
+  background: linear-gradient(to bottom, #f8fbff, #ffffff);
+}
+
+/* Referrals List Scroll */
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+/* Colorful Stat Numbers */
+.display-6 {
+  font-size: 2rem;
+}
+
+/* Bootstrap 5.3+ support classes if available */
+.bg-success-subtle {
+  background-color: #d1e7dd;
+}
+.text-success-emphasis {
+  color: #0f5132;
+}
+
+
+.badge {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Optional extra badge colors if you want variety */
+.bg-secondary {
+  background-color: #ced4da !important;
+  color: #495057 !important;
+}
+.bg-success {
+  background-color: #d1e7dd !important;
+  color: #0f5132 !important;
+}
+.bg-info {
+  background-color: #cfe2ff !important;
+  color: #084298 !important;
+}
+.bg-primary {
+  background-color: #cfe2ff !important;
+  color: #084298 !important;
+}
