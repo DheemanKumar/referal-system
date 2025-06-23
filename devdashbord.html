@@ -3,12 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Dev Dashboard</title>
+  <title>Admin Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons({
+      icons: {
+        LayoutDashboard: lucide.LayoutDashboard,
+        Wallet: lucide.Wallet,
+        LogOut: lucide.LogOut
+      }
+    });
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/devdashbord.css">
   <!-- <link rel="stylesheet" href="css/leaderboard.css"> -->
@@ -19,7 +28,7 @@
   <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded-bottom custom-navbar px-3 py-2 mb-4">
     <div class="container-fluid">
       <!-- Brand -->
-      <span class="navbar-brand fw-bold fs-4 text-primary">HireChamp</span>
+      <span class="navbar-brand fw-bold fs-4 text-gradient">HireChamp</span>
 
       <!-- Toggle for mobile -->
       <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
@@ -31,17 +40,54 @@
       <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <!-- Left Buttons -->
         <div class="d-flex align-items-center gap-2">
-          <button class="btn btn-outline-primary rounded-pill px-3 active" id="btn-dashboard">Dashboard</button>
-          <button class="btn btn-outline-primary rounded-pill px-3" id="btn-earning">Earning</button>
+          <button class="btn btn-outline-primary rounded-pill px-3 nav-btn active" id="btn-dashboard">
+            <i data-lucide="layout-dashboard" class="me-1"></i> Dashboard
+          </button>
+          <button class="btn btn-outline-primary rounded-pill px-3 nav-btn" id="btn-earning">
+            <i data-lucide="wallet" class="me-1"></i> Earning
+          </button>
         </div>
 
         <!-- Right Logout -->
         <div class="d-flex">
-          <button class="btn btn-danger rounded-pill px-4 ms-lg-3 mt-2 mt-lg-0" id="btn-logout">Logout</button>
+          <button class="btn btn-danger rounded-pill px-4 ms-lg-3 mt-2 mt-lg-0" id="btn-logout">
+            <i data-lucide="log-out" class="me-1"></i> Logout
+          </button>
         </div>
       </div>
     </div>
   </nav>
+
+  <!-- Admin Hero Section -->
+  <div class="container mb-4">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-10 mx-auto">
+        <div class="position-relative rounded-4 overflow-hidden shadow-lg mb-4"
+          style="background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%); min-height: 180px;">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
+            alt="Admin Hero" class="w-100 h-100 object-fit-cover opacity-25 position-absolute top-0 start-0"
+            style="z-index: 1;">
+          <div class="position-relative z-2 p-4 d-flex flex-column flex-md-row align-items-center justify-content-between"
+            style="min-height: 180px;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 64px; height: 64px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); box-shadow: 0 4px 16px rgba(67,233,123,0.15);">
+                <i data-lucide="shield" class="text-white" style="width: 2.2rem; height: 2.2rem;"></i>
+              </div>
+              <div>
+                <h2 class="fw-bold text-white mb-1">Welcome, Admin!</h2>
+                <div class="text-white-50">Your dashboard for referrals & rewards</div>
+              </div>
+            </div>
+            <span class="badge text-white mt-3 mt-md-0 px-4 py-2 rounded-pill d-inline-block fs-6 fw-semibold"
+              style="background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%); box-shadow: 0 2px 8px rgba(221,36,118,0.15);">
+              <i data-lucide="user-check" class="me-1"></i> Admin Mode
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Main Content -->
   <div class="container">
@@ -49,14 +95,19 @@
       <!-- Admin Info Panel -->
       <div class="col-lg-8">
         <!-- Admin Info Card -->
-        <div class="card shadow-lg rounded-4 mb-4 border-0 bg-light">
+        <div class="card shadow-lg rounded-4 mb-4 border-0 bg-light glass-card">
           <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-md-center py-4 px-4">
             <!-- Left: Name and Email -->
-            <div>
-              <h4 class="fw-bold mb-1 text-primary" id="user-name">Admin Name</h4>
-              <div class="text-muted small" id="user-email">admin@email.com</div>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle d-flex align-items-center justify-content-center admin-avatar"
+                style="width: 56px; height: 56px; background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);">
+                <i data-lucide="user-circle" class="text-white" style="width: 2rem; height: 2rem;"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold mb-1 text-primary" id="user-name">Admin Name</h4>
+                <div class="text-muted small" id="user-email">admin@email.com</div>
+              </div>
             </div>
-
             <!-- Right: Icon + Admin Badge -->
             <div class="mt-3 mt-md-0 text-end">
               <i class="bi bi-person-circle text-primary fs-1 d-block"></i>
@@ -68,15 +119,18 @@
           </div>
         </div>
 
-
         <!-- Referrals Table Card -->
-        <div class="card shadow-lg rounded-4 border-0 bg-white">
+        <div class="card shadow-lg rounded-4 border-0 glass-card"
+          style="background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);">
           <!-- Header -->
           <div
-            class="card-header bg-white border-0 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center px-4 pt-4 pb-2">
-            <div class="mb-2 mb-md-0">
-              <h5 class="fw-bold mb-1 text-dark">Your Referrals</h5>
-              <p class="text-muted small mb-0">Track the status of your submitted referrals</p>
+            class="card-header bg-transparent border-0 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center px-4 pt-4 pb-2">
+            <div class="mb-2 mb-md-0 d-flex align-items-center gap-2">
+              <i data-lucide="users" class="text-primary" style="width: 1.5rem; height: 1.5rem;"></i>
+              <div>
+                <h5 class="fw-bold mb-1 text-dark">Your Referrals</h5>
+                <p class="text-muted small mb-0">Track the status of your submitted referrals</p>
+              </div>
             </div>
             <div class="d-flex flex-wrap gap-2">
               <button class="btn btn-sm btn-gradient-blue shadow-sm px-3" id="download-all-resumes">
@@ -93,39 +147,49 @@
             <div class="overflow-x-auto">
               <div id="referrals-list" class="rounded-4">
                 <div
-                  class="text-center py-5 text-muted bg-light-subtle rounded-4 border border-dashed border-secondary-subtle">
-                  <i class="bi bi-people fs-1 mb-3 d-block text-secondary"></i>
+                  class="text-center py-5 text-muted bg-light-subtle rounded-4 border border-dashed border-secondary-subtle d-flex flex-column align-items-center justify-content-center">
+                  <img src="https://assets10.lottiefiles.com/packages/lf20_4kx2q32n.json" alt="No Referrals"
+                    style="width: 80px; height: 80px; margin-bottom: 1rem;" onerror="this.style.display='none'">
+                  <i data-lucide="users" class="fs-1 mb-3 d-block text-secondary"></i>
                   <div class="fw-semibold">No referrals yet. Start referring candidates!</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
-
       </div>
-
 
       <!-- Leaderboard Panel -->
       <div class="col-lg-4 leaderboard-container">
-        <div class="card shadow-sm border-0 rounded-4 leaderboard-card">
-          <div class="card-header d-flex align-items-center bg-light border-0 rounded-top-4 py-3 px-4">
+        <div class="card shadow-sm border-0 rounded-4 leaderboard-card glass-card"
+          style="background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);">
+          <div class="card-header d-flex align-items-center bg-transparent border-0 rounded-top-4 py-3 px-4">
             <i data-lucide="trophy" class="text-warning"
               style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem;"></i>
             <span class="fw-bold fs-5 text-dark">Leaderboard</span>
           </div>
           <div class="card-body px-4 pb-4">
             <div id="leaderboard-list">
-              <div class="text-center py-4 text-muted small">No leaderboard data available</div>
+              <div class="text-center py-4 text-muted small d-flex flex-column align-items-center">
+                <img src="https://assets10.lottiefiles.com/packages/lf20_4kx2q32n.json" alt="No Leaderboard"
+                  style="width: 60px; height: 60px; margin-bottom: 0.5rem;" onerror="this.style.display='none'">
+                <i data-lucide="award" class="mb-2 text-secondary"></i>
+                No leaderboard data available
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-top shadow-sm py-3 mt-5" style="border-radius: 1.2rem 1.2rem 0 0;">
+    <div class="container text-center">
+      <span class="fw-semibold text-primary">HireChamp</span> &copy; 2025. Made with <span
+        style="color: #e25555;">&#10084;</span> by your team.
+    </div>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -134,7 +198,11 @@
     lucide.createIcons({
       icons: {
         Users: lucide.Users,
-        Trophy: lucide.Trophy
+        Trophy: lucide.Trophy,
+        Shield: lucide.Shield,
+        UserCheck: lucide.UserCheck,
+        Award: lucide.Award,
+        UserCircle: lucide.UserCircle
       }
     });
   </script>

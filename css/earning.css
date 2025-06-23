@@ -61,3 +61,63 @@ button:focus {
   box-shadow: 0 0 0 0.15rem rgba(108, 117, 125, 0.4);
 }
 
+/* Modern Earning Page Enhancements */
+
+/* Decorative image animation */
+.earning-hero-img {
+  animation: floatY 3.5s ease-in-out infinite;
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* User Info Card */
+.card.user-info-card {
+  background: linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%);
+  border: none;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.card.user-info-card .user-avatar {
+  background: linear-gradient(135deg, #2563eb 60%, #60a5fa 100%);
+  color: #fff;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 2px 12px 0 rgba(37,99,235,0.10);
+  border: 3px solid #fff;
+}
+
+/* Earning Summary Cards */
+.earning-summary-card {
+  transition: transform 0.18s;
+  cursor: pointer;
+}
+.earning-summary-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
+}
+.earning-summary-card .card-body {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Earning Breakdown Empty State */
+#earning-list .empty-breakdown {
+  background: linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .earning-hero-img { width: 56px !important; height: 56px !important; top: 12px !important; right: 2vw !important; }
+  .card.user-info-card { border-radius: 1rem; }
+}
+

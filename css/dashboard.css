@@ -1,0 +1,52 @@
+/* Modern Dashboard Enhancements */
+
+/* Referral Card */
+.stylized-referral-card {
+  border-radius: 1.5rem;
+  background: linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  border: none;
+}
+.stylized-referral-card .card-header {
+  border-radius: 1.5rem 1.5rem 0 0;
+  background: #fff;
+}
+
+/* User Info Card */
+.user-info-card {
+  background: linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  border: none;
+}
+
+/* Stats Card */
+.stats-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.07);
+  border: none;
+}
+.stats-card .card-header {
+  background: #fff;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+/* Leaderboard Card */
+.leaderboard-card {
+  background: linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  border: none;
+}
+.leaderboard-card .card-header {
+  background: #f8fafc;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .stylized-referral-card, .user-info-card, .stats-card, .leaderboard-card {
+    border-radius: 1rem;
+  }
+}

@@ -72,31 +72,41 @@ document.addEventListener("DOMContentLoaded", function () {
       list.innerHTML = "";
       if (leaderboard.length === 0) {
         list.innerHTML =
-          '<div class="text-center py-4 text-muted small">No leaderboard data available</div>';
+          `<div class="text-center py-4 text-muted small d-flex flex-column align-items-center">
+            <i data-lucide="trophy" class="mb-2 text-warning" style="width:2rem;height:2rem;"></i>
+            <div>No leaderboard data available</div>
+          </div>`;
       } else {
         list.innerHTML = ""; // Clear old
         leaderboard.forEach((entry, idx) => {
           const card = document.createElement("div");
           card.className =
-            "leaderboard-entry-card card mb-2 border-0 shadow-sm rounded-3";
+            "leaderboard-entry-card card mb-2 border-0 shadow-sm rounded-3 bg-white position-relative overflow-hidden";
 
           const rankColor =
-            ["bg-warning", "bg-secondary", "bg-info"][idx] || "bg-primary";
+            [
+              "linear-gradient(90deg,#ffd700 0%,#fffbe6 100%)", // gold
+              "linear-gradient(90deg,#c0c0c0 0%,#f0f0f0 100%)", // silver
+              "linear-gradient(90deg,#cd7f32 0%,#fbeee6 100%)" // bronze
+            ][idx] || "linear-gradient(90deg,#4e54c8 0%,#8f94fb 100%)";
 
           card.innerHTML = `
-      <div class="card-body d-flex justify-content-between align-items-center p-3">
-        <div class="d-flex align-items-center">
-          <span class="badge ${rankColor} text-dark fw-semibold me-3 rounded-pill px-3 py-2">#${
-            idx + 1
-          }</span>
-          <div class="fw-semibold text-dark">${entry.name}</div>
+      <div class="card-body d-flex justify-content-between align-items-center p-3" style="background: ${rankColor}; border-radius: 1rem;">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge text-dark fw-semibold me-2 rounded-pill px-3 py-2" style="background: rgba(255,255,255,0.7); font-size:1.1rem;">
+            <i data-lucide="award" class="me-1 text-warning"></i> #${idx + 1}
+          </span>
+          <div class="fw-semibold text-dark d-flex align-items-center gap-2">
+            <i data-lucide="user" class="text-primary"></i> ${entry.name}
+          </div>
         </div>
-        <span class="badge bg-success-subtle text-success-emphasis rounded-pill px-3 py-2">
-          ${entry.lead_count} Leads
+        <span class="badge bg-success-subtle text-success-emphasis rounded-pill px-3 py-2 d-flex align-items-center gap-1">
+          <i data-lucide="users" class="text-success"></i> ${entry.lead_count} Leads
         </span>
       </div>
     `;
           list.appendChild(card);
+          lucide.createIcons();
         });
       }
     } catch (err) {

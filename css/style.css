@@ -3,29 +3,78 @@
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   background: linear-gradient(90deg, #f5f9ff, #ffffff);
+  box-shadow: 0 4px 24px rgba(80, 80, 200, 0.08);
 }
 
 /* Active button style override */
-.custom-navbar .btn.active {
-  background-color: #4a9cf1 !important;
+.custom-navbar .btn.active, .custom-navbar .btn:active {
+  background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%) !important;
   color: #fff !important;
-  border-color: #4a9cf1 !important;
-  box-shadow: 0 2px 8px rgba(74, 156, 241, 0.3);
+  border-color: #4e54c8 !important;
+  box-shadow: 0 2px 8px rgba(74, 156, 241, 0.18);
+}
+
+/* Button default style */
+.custom-navbar .btn-outline-primary {
+  border-width: 2px;
+  font-weight: 500;
+  background: #fff;
+  color: #4e54c8;
+  transition: background 0.2s, color 0.2s;
 }
 
 /* Button hover effects */
 .custom-navbar .btn-outline-primary:hover {
-  background-color: #e3f0ff;
-  border-color: #4a9cf1;
+  background: #e3f0ff;
+  color: #4e54c8;
+  border-color: #4e54c8;
 }
 
-/* Brand color */
+/* Danger button style */
+.custom-navbar .btn-danger {
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(226, 85, 85, 0.10);
+}
+
+/* Brand color and style */
 .navbar-brand {
   color: #3c7edb !important;
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+
+/* Text gradient for brand */
+.text-gradient {
+  background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Nav button icon alignment */
+.nav-btn i {
+  vertical-align: middle;
+  margin-right: 0.4em;
 }
 
 /* Mobile toggle icon spacing fix */
 .navbar-toggler {
   padding: 6px;
+}
+
+@media (max-width: 991px) {
+  .custom-navbar {
+    border-radius: 0 0 1rem 1rem;
+    padding: 0.7rem 1rem;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .nav-btn {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
 }
 
