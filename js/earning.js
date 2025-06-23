@@ -49,6 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
       if(finalEarningSummary) {
         finalEarningSummary.textContent = '₹' + (data.finalEarning || 0);
       }
+      // Update user info
+      
+        document.getElementById('user-name').textContent = data.user_name || '';
+        document.getElementById('user-email').textContent = data.email || '';
+        document.getElementById('user-employee-id').textContent = 'Employee ID: ' + (data.employee_id || '');
+      
       // Render earning breakdown
       const list = document.getElementById('earning-list');
 list.innerHTML = '';
