@@ -179,3 +179,67 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   fetchLeaderboard();
 });
+
+const educationData = {
+  "B.Tech": ["Computer Science Engineering", "Information Technology", "Mechanical Engineering"],
+  "M.Tech": ["Data Science", "Thermal Engineering"],
+  "BCA": ["General", "Cybersecurity"],
+  "MCA": ["AI & ML", "Software Engineering"],
+  "B.Com": ["Accounting & Finance", "Taxation"],
+  "M.Com": ["Finance", "Economics"],
+  "MBA": ["Finance", "HR", "Marketing"],
+  "Other": [] // Special key to detect "Other"
+};
+
+const degreeSelect = document.getElementById("degree");
+const courseSelect = document.getElementById("course");
+const otherDegreeGroup = document.getElementById("other-degree-group");
+const otherCourseGroup = document.getElementById("other-course-group");
+
+// Populate Degree dropdown
+Object.keys(educationData).forEach(degree => {
+  const option = document.createElement("option");
+  option.value = degree;
+  option.textContent = degree;
+  degreeSelect.appendChild(option);
+});
+
+// On Degree Change
+degreeSelect.addEventListener("change", function () {
+  const selectedDegree = this.value;
+  const courses = educationData[selectedDegree] || [];
+
+  // Show/hide 'Other' degree input
+  if (selectedDegree === "Other") {
+    otherDegreeGroup.classList.remove("d-none");
+  } else {
+    otherDegreeGroup.classList.add("d-none");
+  }
+
+  // Reset and populate courses
+  courseSelect.innerHTML = '<option value="" disabled selected>Select a course</option>';
+  courses.forEach(course => {
+    const option = document.createElement("option");
+    option.value = course;
+    option.textContent = course;
+    courseSelect.appendChild(option);
+  });
+
+  // Always add "Other" option to course list
+  const otherOption = document.createElement("option");
+  otherOption.value = "Other";
+  otherOption.textContent = "Other";
+  courseSelect.appendChild(otherOption);
+});
+
+// On Course Change
+courseSelect.addEventListener("change", function () {
+  const selectedCourse = this.value;
+
+  if (selectedCourse === "Other") {
+    otherCourseGroup.classList.remove("d-none");
+  } else {
+    otherCourseGroup.classList.add("d-none");
+  }
+});
+

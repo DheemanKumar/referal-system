@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Dashboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
@@ -20,19 +20,24 @@
         BarChart3: lucide.BarChart3,
         ListCheck: lucide.ListCheck,
         Trophy: lucide.Trophy,
-        Users: lucide.Users
-      }
+        Users: lucide.Users,
+      },
     });
   </script>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/form.css">
-  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/form.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
 </head>
 
-<body class="bg-light min-vh-100"
-  style="background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 60%, #dbeafe 100%); background-attachment: fixed;">
-
-  
+<body class="bg-light min-vh-100" style="
+      background: linear-gradient(
+        120deg,
+        #e0e7ff 0%,
+        #f8fafc 60%,
+        #dbeafe 100%
+      );
+      background-attachment: fixed;
+    ">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded-bottom custom-navbar px-3 py-2 mb-4">
     <div class="container-fluid">
@@ -64,25 +69,38 @@
     </div>
   </nav>
 
-
   <div class="container">
     <div class="row g-4">
       <!-- Referral Form Container -->
       <div class="col-12 mb-4 referral-container">
         <!-- Referral Form (from refer.index.html) -->
         <div class="card shadow-sm mx-auto stylized-referral-card">
-          <div class="card-header text-center bg-white border-0 position-relative"
-            style="background: linear-gradient(90deg, #e0e7ff 0%, #f8fafc 100%); border-radius: 1.2rem 1.2rem 0 0;">
+          <div class="card-header text-center bg-white border-0 position-relative" style="
+                background: linear-gradient(90deg, #e0e7ff 0%, #f8fafc 100%);
+                border-radius: 1.2rem 1.2rem 0 0;
+              ">
             <div class="mb-3">
-              <i data-lucide="user-plus" class="text-primary" style="width: 2.5rem; height: 2.5rem;"></i>
+              <i data-lucide="user-plus" class="text-primary" style="width: 2.5rem; height: 2.5rem"></i>
             </div>
-            <h5 class="card-title mb-1 fw-bold text-primary-emphasis"
-              style="font-size: 1.35rem; letter-spacing: 0.5px;">Refer a Candidate &amp; Help Them Get Hired!</h5>
-            <div class="card-subtitle text-muted mb-2"
-              style="font-size: 1.05rem;">Share the details of a talented friend or colleague. If they get selected, you both win!</div>
+            <h5 class="card-title mb-1 fw-bold text-primary-emphasis" style="font-size: 1.35rem; letter-spacing: 0.5px">
+              Refer a Candidate &amp; Help Them Get Hired!
+            </h5>
+            <div class="card-subtitle text-muted mb-2" style="font-size: 1.05rem">
+              Share the details of a talented friend or colleague. If they get
+              selected, you both win!
+            </div>
             <div class="mb-1">
-              <span class="badge bg-gradient"
-                style="background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%); color: #00bbff; font-size: 1rem; padding: 0.5em 1.2em; border-radius: 1em;">Fast, Easy &amp; Rewarding</span>
+              <span class="badge bg-gradient" style="
+                    background: linear-gradient(
+                      90deg,
+                      #60a5fa 0%,
+                      #2563eb 100%
+                    );
+                    color: #00bbff;
+                    font-size: 1rem;
+                    padding: 0.5em 1.2em;
+                    border-radius: 1em;
+                  ">Fast, Easy &amp; Rewarding</span>
             </div>
           </div>
           <form id="referral-form" class="needs-validation" novalidate>
@@ -93,7 +111,7 @@
                 <div class="input-group">
                   <span class="input-group-text bg-white"><i data-lucide="user" class="text-secondary"></i></span>
                   <input type="text" class="form-control ps-2" id="name" name="name"
-                    placeholder="Enter candidate's full name" required>
+                    placeholder="Enter candidate's full name" required />
                 </div>
                 <div class="invalid-feedback">Full name is required.</div>
               </div>
@@ -103,7 +121,7 @@
                 <div class="input-group">
                   <span class="input-group-text bg-white"><i data-lucide="phone" class="text-secondary"></i></span>
                   <input type="tel" class="form-control ps-2" id="mobile" name="mobile"
-                    placeholder="Enter mobile number" required>
+                    placeholder="Enter mobile number" required />
                 </div>
                 <div class="invalid-feedback">Mobile number is required.</div>
               </div>
@@ -113,7 +131,7 @@
                 <div class="input-group">
                   <span class="input-group-text bg-white"><i data-lucide="mail" class="text-secondary"></i></span>
                   <input type="email" class="form-control ps-2" id="email" name="email"
-                    placeholder="Enter email address" required>
+                    placeholder="Enter email address" required />
                 </div>
                 <div class="invalid-feedback">Email address is required.</div>
               </div>
@@ -124,20 +142,46 @@
               <div class="col-md-3">
                 <label for="degree" class="form-label">Degree</label>
                 <div class="input-group">
-                  <span class="input-group-text bg-white"><i data-lucide="book-open" class="text-secondary"></i></span>
-                  <input type="text" class="form-control ps-2" id="degree" name="degree"
-                    placeholder="Enter degree (e.g., BTech, MTech)" required>
+                  <span class="input-group-text bg-white">
+                    <i data-lucide="book-open" class="text-secondary"></i>
+                  </span>
+                  <select class="form-select ps-2" id="degree" required>
+                    <option value="" disabled selected>
+                      Select a degree
+                    </option>
+                  </select>
                 </div>
+                <div class="input-group mt-2 d-none" id="other-degree-group">
+                  <span class="input-group-text bg-white">
+                    <i data-lucide="edit-3" class="text-secondary"></i>
+                  </span>
+                  <input type="text" class="form-control ps-2" id="other-degree-input"
+                    placeholder="Enter other degree" />
+                </div>
+
                 <div class="invalid-feedback">Degree is required.</div>
               </div>
 
               <div class="col-md-3">
                 <label for="course" class="form-label">Course</label>
                 <div class="input-group">
-                  <span class="input-group-text bg-white"><i data-lucide="layers" class="text-secondary"></i></span>
-                  <input type="text" class="form-control ps-2" id="course" name="course"
-                    placeholder="Enter course (e.g., CSE, IT)" required>
+                  <span class="input-group-text bg-white">
+                    <i data-lucide="layers" class="text-secondary"></i>
+                  </span>
+                  <select class="form-select ps-2" id="course" required>
+                    <option value="" disabled selected>
+                      Select a course
+                    </option>
+                  </select>
                 </div>
+                <div class="input-group mt-2 d-none" id="other-course-group">
+                  <span class="input-group-text bg-white">
+                    <i data-lucide="edit-3" class="text-secondary"></i>
+                  </span>
+                  <input type="text" class="form-control ps-2" id="other-course-input"
+                    placeholder="Enter other course" />
+                </div>
+
                 <div class="invalid-feedback">Course is required.</div>
               </div>
 
@@ -146,7 +190,7 @@
                 <div class="input-group">
                   <span class="input-group-text bg-white"><i data-lucide="school" class="text-secondary"></i></span>
                   <input type="text" class="form-control ps-2" id="college" name="college"
-                    placeholder="Enter college name" required>
+                    placeholder="Enter college name" required />
                 </div>
                 <div class="invalid-feedback">College is required.</div>
               </div>
@@ -156,9 +200,11 @@
                 <div class="input-group">
                   <span class="input-group-text bg-white"><i data-lucide="calendar" class="text-secondary"></i></span>
                   <input type="text" class="form-control ps-2" id="year_of_passing" name="year_of_passing"
-                    placeholder="Enter year of passing" required>
+                    placeholder="Enter year of passing" required />
                 </div>
-                <div class="invalid-feedback">Year of passing is required.</div>
+                <div class="invalid-feedback">
+                  Year of passing is required.
+                </div>
               </div>
             </div>
 
@@ -168,7 +214,7 @@
                 <label for="resume" class="form-label">Resume (PDF only)</label>
                 <div class="input-group">
                   <span class="input-group-text bg-white"><i data-lucide="upload" class="text-secondary"></i></span>
-                  <input type="file" class="form-control ps-2" id="resume" name="resume" accept=".pdf" required>
+                  <input type="file" class="form-control ps-2" id="resume" name="resume" accept=".pdf" required />
                 </div>
                 <div class="invalid-feedback">Resume (PDF) is required.</div>
                 <div id="resume-feedback" class="form-text text-success d-none"></div>
@@ -184,7 +230,6 @@
               </button>
             </div>
           </form>
-
         </div>
       </div>
 
@@ -193,25 +238,39 @@
         <!-- User Info Panel -->
         <!-- User Info Card -->
         <div class="card mb-4 shadow-sm border-0 rounded-4 user-info-card position-relative overflow-hidden">
-          <div class="position-absolute top-0 end-0 m-3 d-none d-md-block" style="z-index:1; opacity:0.09;">
-            
-          </div>
-          <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-md-center position-relative"
-            style="z-index:2;">
+          <div class="position-absolute top-0 end-0 m-3 d-none d-md-block" style="z-index: 1; opacity: 0.09"></div>
+          <div
+            class="card-body d-flex flex-column flex-md-row justify-content-between align-items-md-center position-relative"
+            style="z-index: 2">
             <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
-              <div class="rounded-circle d-flex align-items-center justify-content-center"
-                style="width: 56px; height: 56px; background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%); box-shadow: 0 4px 16px rgba(67,233,123,0.10);">
-                <i data-lucide="user" class="text-white" style="width: 38px; height: 38px;"></i>
+              <div class="rounded-circle d-flex align-items-center justify-content-center" style="
+                    width: 56px;
+                    height: 56px;
+                    background: linear-gradient(
+                      135deg,
+                      #60a5fa 0%,
+                      #2563eb 100%
+                    );
+                    box-shadow: 0 4px 16px rgba(67, 233, 123, 0.1);
+                  ">
+                <i data-lucide="user" class="text-white" style="width: 38px; height: 38px"></i>
               </div>
               <div>
-                <h4 class="mb-1 text-primary fw-bold" id="user-name">User Name</h4>
-                <div class="text-muted small" id="user-email">user@email.com</div>
-                <div class="text-muted small" id="user-employee-id">Employee ID: </div>
+                <h4 class="mb-1 text-primary fw-bold" id="user-name">
+                  User Name
+                </h4>
+                <div class="text-muted small" id="user-email">
+                  user@email.com
+                </div>
+                <div class="text-muted small" id="user-employee-id">
+                  Employee ID:
+                </div>
               </div>
             </div>
             <div class="mt-3 mt-md-0 text-md-end">
-              <div class="text-muted fw-medium mb-1 d-flex align-items-center gap-2"><i
-                  class="bi bi-currency-rupee text-success"></i> Earning</div>
+              <div class="text-muted fw-medium mb-1 d-flex align-items-center gap-2">
+                <i class="bi bi-currency-rupee text-success"></i> Earning
+              </div>
               <span class="badge bg-success-subtle text-success-emphasis fs-5 px-3 py-2 rounded-pill"
                 id="user-earning">₹0</span>
             </div>
@@ -222,25 +281,49 @@
         <div class="container mb-4">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-10 mx-auto">
-              <div class="position-relative rounded-4 overflow-hidden shadow-lg mb-4"
-                style="background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%); min-height: 160px;">
+              <div class="position-relative rounded-4 overflow-hidden shadow-lg mb-4" style="
+                    background: linear-gradient(
+                      90deg,
+                      #4e54c8 0%,
+                      #8f94fb 100%
+                    );
+                    min-height: 160px;
+                  ">
                 <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
                   alt="User Hero" class="w-100 h-100 object-fit-cover opacity-25 position-absolute top-0 start-0"
-                  style="z-index: 1;">
-                <div class="position-relative z-2 p-4 d-flex flex-column flex-md-row align-items-center justify-content-between"
-                  style="min-height: 160px;">
+                  style="z-index: 1" />
+                <div
+                  class="position-relative z-2 p-4 d-flex flex-column flex-md-row align-items-center justify-content-between"
+                  style="min-height: 160px">
                   <div class="d-flex align-items-center gap-3">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center"
-                      style="width: 56px; height: 56px; background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%); box-shadow: 0 4px 16px rgba(67,233,123,0.10);">
-                      <i data-lucide="user" class="text-white" style="width: 2rem; height: 2rem;"></i>
+                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="
+                          width: 56px;
+                          height: 56px;
+                          background: linear-gradient(
+                            135deg,
+                            #60a5fa 0%,
+                            #2563eb 100%
+                          );
+                          box-shadow: 0 4px 16px rgba(67, 233, 123, 0.1);
+                        ">
+                      <i data-lucide="user" class="text-white" style="width: 2rem; height: 2rem"></i>
                     </div>
                     <div>
                       <h2 class="fw-bold text-white mb-1">Welcome!</h2>
-                      <div class="text-white-50">Refer candidates and track your rewards</div>
+                      <div class="text-white-50">
+                        Refer candidates and track your rewards
+                      </div>
                     </div>
                   </div>
                   <span class="badge text-white mt-3 mt-md-0 px-4 py-2 rounded-pill d-inline-block fs-6 fw-semibold"
-                    style="background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%); box-shadow: 0 2px 8px rgba(67,233,123,0.10);">
+                    style="
+                        background: linear-gradient(
+                          90deg,
+                          #43e97b 0%,
+                          #38f9d7 100%
+                        );
+                        box-shadow: 0 2px 8px rgba(67, 233, 123, 0.1);
+                      ">
                     <i data-lucide="gift" class="me-1"></i> User Dashboard
                   </span>
                 </div>
@@ -258,28 +341,33 @@
           <div class="card-body">
             <div class="row text-center g-4">
               <div class="col-6 col-md-4 col-lg-2">
-                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1"><i
-                    class="bi bi-people-fill text-info"></i><span id="total-leads">0</span></div>
+                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1">
+                  <i class="bi bi-people-fill text-info"></i><span id="total-leads">0</span>
+                </div>
                 <div class="text-muted small">Total</div>
               </div>
               <div class="col-6 col-md-4 col-lg-2">
-                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1"><i
-                    class="bi bi-check-circle-fill text-success"></i><span id="valid-leads">0</span></div>
+                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1">
+                  <i class="bi bi-check-circle-fill text-success"></i><span id="valid-leads">0</span>
+                </div>
                 <div class="text-muted small">Valid</div>
               </div>
               <div class="col-6 col-md-4 col-lg-2">
-                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1"><i
-                    class="bi bi-hourglass-split text-warning"></i><span id="review-leads">0</span></div>
+                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1">
+                  <i class="bi bi-hourglass-split text-warning"></i><span id="review-leads">0</span>
+                </div>
                 <div class="text-muted small">Under Review</div>
               </div>
               <div class="col-6 col-md-4 col-lg-2">
-                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1"><i
-                    class="bi bi-star-fill text-primary"></i><span id="shortlisted-leads">0</span></div>
+                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1">
+                  <i class="bi bi-star-fill text-primary"></i><span id="shortlisted-leads">0</span>
+                </div>
                 <div class="text-muted small">Shortlisted</div>
               </div>
               <div class="col-6 col-md-4 col-lg-2">
-                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1"><i
-                    class="bi bi-trophy-fill text-warning"></i><span id="joined-leads">0</span></div>
+                <div class="display-6 text-primary fw-bold d-flex align-items-center justify-content-center gap-1">
+                  <i class="bi bi-trophy-fill text-warning"></i><span id="joined-leads">0</span>
+                </div>
                 <div class="text-muted small">Joined</div>
               </div>
             </div>
@@ -295,28 +383,31 @@
           <div class="card-body">
             <div class="overflow-x-auto">
               <div id="referrals-list">
-                <div class="text-center py-4 text-muted"><i class="bi bi-person-plus fs-3 text-info"></i> No referrals yet. Start by adding your first referral!</div>
+                <div class="text-center py-4 text-muted">
+                  <i class="bi bi-person-plus fs-3 text-info"></i> No
+                  referrals yet. Start by adding your first referral!
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
       <!-- Leaderboard Container -->
       <div class="col-lg-4 leaderboard-container">
-        <div class="card shadow-sm border-0 rounded-4 leaderboard-card glass-card"
-          style="background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);">
+        <div class="card shadow-sm border-0 rounded-4 leaderboard-card glass-card" style="
+              background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
+            ">
           <div class="card-header d-flex align-items-center bg-transparent border-0 rounded-top-4 py-3 px-4">
             <i data-lucide="trophy" class="text-warning"
-              style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem;"></i>
+              style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem"></i>
             <span class="fw-bold fs-5 text-dark">Leaderboard</span>
           </div>
           <div class="card-body px-4 pb-4">
             <div id="leaderboard-list">
               <div class="text-center py-4 text-muted small d-flex flex-column align-items-center">
                 <img src="https://assets10.lottiefiles.com/packages/lf20_4kx2q32n.json" alt="No Leaderboard"
-                  style="width: 60px; height: 60px; margin-bottom: 0.5rem;" onerror="this.style.display='none'">
+                  style="width: 60px; height: 60px; margin-bottom: 0.5rem" onerror="this.style.display='none'" />
                 <i data-lucide="award" class="mb-2 text-secondary"></i>
                 No leaderboard data available
               </div>
@@ -324,11 +415,8 @@
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
-
 
   <!-- Referral Success Modal -->
   <div class="modal fade" id="referralSuccessModal" tabindex="-1" aria-labelledby="referralSuccessModalLabel"
@@ -337,18 +425,21 @@
       <div class="modal-content">
         <div class="modal-body text-center">
           <div class="mb-3">
-            <i data-lucide="user-plus" class="text-success" style="width: 2.5rem; height: 2.5rem;"></i>
+            <i data-lucide="user-plus" class="text-success" style="width: 2.5rem; height: 2.5rem"></i>
           </div>
           <h5 class="mb-3">Referral Submitted</h5>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+            OK
+          </button>
         </div>
       </div>
     </div>
   </div>
   <!-- Footer -->
-  <footer class="bg-white border-top shadow-sm py-3 mt-5" style="border-radius: 1.2rem 1.2rem 0 0;">
+  <footer class="bg-white border-top shadow-sm py-3 mt-5" style="border-radius: 1.2rem 1.2rem 0 0">
     <div class="container text-center">
-      <span class="fw-semibold text-primary">HireChamp</span> &copy; 2025. Made with <span style="color: #e25555;">&#10084;</span> by your team.
+      <span class="fw-semibold text-primary">HireChamp</span> &copy; 2025.
+      Made with <span style="color: #e25555">&#10084;</span> by your team.
     </div>
   </footer>
   <!-- Bootstrap JS -->
@@ -361,9 +452,11 @@
   <script src="js/refer.js"></script>
   <script src="js/dashbord.js"></script>
   <script>
-    document.getElementById('btn-earning').addEventListener('click', function () {
-      window.location.href = 'earning.html';
-    });
+    document
+      .getElementById("btn-earning")
+      .addEventListener("click", function () {
+        window.location.href = "earning.html";
+      });
   </script>
 </body>
 
